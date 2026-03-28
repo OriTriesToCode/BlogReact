@@ -1,7 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Blog.css'
-import { entries } from './data'
+// import { entries } from './data'
 import { CardList } from './Cards';
+
+const[entries, setEntries] = useState([{id_post:0, title:"", date:"", image:"", text:"", id_author:0}]);
+
+useEffect(() => {
+    fetch("http://localhost:8000/posts")
+    .then((res) => res.json())
+    .then((posts) => setEntries(posts));
+}, []);
 
 function Blog() {
     const [filteredText, setFilteredText] = useState('');
