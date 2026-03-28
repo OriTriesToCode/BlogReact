@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+import './Blog.css'
 import { entries } from './data'
 import { CardList } from './Cards';
 
@@ -11,7 +11,7 @@ function Blog() {
   
     return (
       <>
-        <h1>Mitos Griegos</h1>
+        <h1>Articulos Recientes</h1>
         <div className='filter'>
           <h3>Buscar:</h3>
           <input type="text" value={filteredText} onChange={handleChange}></input>
