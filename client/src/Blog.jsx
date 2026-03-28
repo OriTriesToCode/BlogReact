@@ -3,15 +3,15 @@ import './Blog.css'
 // import { entries } from './data'
 import { CardList } from './Cards';
 
-const[entries, setEntries] = useState([{id_post:0, title:"", date:"", image:"", text:"", id_author:0}]);
-
-useEffect(() => {
-    fetch("http://localhost:8000/posts")
-    .then((res) => res.json())
-    .then((posts) => setEntries(posts));
-}, []);
-
 function Blog() {
+    const[entries, setEntries] = useState([{id_post:0, title:"", date:"", image:"", text:"", id_author:0}]);
+
+    useEffect(() => {
+        fetch("http://localhost:8000/posts")
+        .then((res) => res.json())
+        .then((posts) => setEntries(posts));
+    }, []);
+
     const [filteredText, setFilteredText] = useState('');
     function handleChange(e) {
       setFilteredText(e.target.value);

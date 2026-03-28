@@ -2,10 +2,10 @@ export function CardList({entries, filteredText}) {
     const cards = entries.map(entry => 
         entry.title.includes(filteredText) && 
         <Card
-        key={entry.id}
-        id={entry.id} 
+        key={entry.id_post}
+        id={entry.id_post} 
         title={entry.title} 
-        img={entry.img} 
+        img={entry.image} 
         date={entry.date}></Card>)
     return (
         <div className='main'>

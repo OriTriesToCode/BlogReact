@@ -35,7 +35,7 @@ app.get('/posts', (req, res) => {
 
 /*GET a specific post */
 app.get('/posts/:id_post', (req, res) => {
-    db.one('SELECT * FROM post WHERE id_post=$1', [req.param.id_post])
+    db.one('SELECT * FROM post WHERE id_post=$1', [req.params.id_post])
     .then((data) => res.json(data))
     .catch((error) => console.log('ERROR:', error));
 })

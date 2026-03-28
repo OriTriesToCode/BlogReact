@@ -1,6 +1,3 @@
-import { useState } from "react";
-
-const[entries, setEntries] = useState([{id_post:0, title:"", date:"", image:"", text:"", id_author:0}]);
 
 // export const entries = [
 //     {
