@@ -37,5 +37,5 @@ app.get('/posts/:id_post', (req, res) => {
 })
 
 app.listen(8000, () => {
-    console.log('Servidor corriéndose en el puerto 8000');
+    console.log('Servidor corriendo en el puerto 8000');
 });

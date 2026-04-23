@@ -7,6 +7,8 @@ import Home from './Home'
 import Blog from './Blog'
 import Contacto from './Contacto'
 import Navbar from './Navbar'
+import Post from './Post'
+import Author from './Author';
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/blog/:id_post" element={<Post />} />
+        <Route path="/blog/:author_post" element={<Author />} />
       </Routes>
     </>
   )
