@@ -21,7 +21,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/blog/:id_post" element={<Post />} />
-        <Route path="/blog/:author_post" element={<Author />} />
+        <Route path="/blog/author/:id_author" element={<Author />} />
       </Routes>
     </>
   )

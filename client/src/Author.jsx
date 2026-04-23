@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 
 export default function Author() {
     const {id_author} = useParams();
     const [author, setAuthor] = useState({});
 
     useEffect(() => {
-        fetch('http://localhost:8000/posts/'+id_author)
+        fetch('http://localhost:8000/authors/'+id_author)
         .then((res) => res.json())
         .then((data) => setAuthor(data));
     }, [id_author]);

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router-dom";
 
 export default function Post() {
     const {id_post} = useParams();
@@ -15,7 +15,7 @@ export default function Post() {
         <>
             {post.image && <img src={'../'+post.image} alt="Imagen"></img>}
             <h1> {post.title} </h1>
-            <Link to={"/blog/"+id_author}> 
+            <Link to={"/blog/author/"+ post.id_author}> 
                 <h2> Escrito por: {post.id_author} </h2>
             </Link>
             <h2> {post.date} </h2>
