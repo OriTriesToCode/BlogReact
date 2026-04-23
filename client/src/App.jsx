@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { entries } from './data'
+// import { entries } from './data'
 import { CardList } from './Cards';
 import { Routes, Route } from 'react-router';
 import Home from './Home'
