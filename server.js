@@ -13,7 +13,7 @@ const pgp = require('pg-promise')();
 const cn = {
     host: 'localhost',
     port: 5432,
-    database: 'blog',
+    database: 'Blog',
     user: 'postgres',
     password: 'OriYa',
     allowExitOnIdle: true
