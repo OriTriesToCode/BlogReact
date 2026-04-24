@@ -27,7 +27,7 @@ export function Card({id_post, img, title, date}) {
                     <img src={img} alt={title} />
                 </div>
                 <h2> {title} </h2>
-                <p> {date} </p>
+                <p> {date && date.split('T')[0]} </p>
             </Link>
         </div>
     )

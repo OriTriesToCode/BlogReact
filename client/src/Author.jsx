@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 
 export default function Author() {
     const {id_author} = useParams();
@@ -17,7 +17,7 @@ export default function Author() {
             <h1> {author.name} {author.lastname}</h1>
             <h3> {author.date_of_birth} </h3>
             <h3> {author.phone_number} </h3>
-            <h3>{author.email}</h3>
+            <h3> {author.email} </h3>
         </>
     );
 }
