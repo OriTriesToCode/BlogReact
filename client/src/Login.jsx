@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 export default function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     function handleUsernameChange(e) {
@@ -23,12 +24,12 @@ export default function Login() {
             credentials: "include",
             body: formInfo,
         })
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
-            navigate('/authors/'+data.id_author);
+        .then((res) => {
+            if (!res.ok) throw new Error('Credenciales inválidas');
+            return res.json();
         })
-        .catch( (error) => {console.log(error);})
+        .then((data) => navigate('/blog/author/' + data.id_author))
+        .catch(() => setError('Usuario o contraseña incorrectos'));
     }
 
     return (
