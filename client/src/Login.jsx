@@ -1,3 +1,4 @@
+// client/src/Login.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
@@ -6,13 +7,6 @@ export default function Login() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
-
-    function handleUsernameChange(e) {
-        setUsername(e.target.value);
-    }
-    function handlePasswordChange(e) {
-        setPassword(e.target.value);
-    }
 
     function handleSubmit() {
         const formInfo = new FormData();
@@ -35,11 +29,12 @@ export default function Login() {
     return (
         <div className="login">
             <h1>Login</h1>
+            {error && <p style={{color: 'tomato'}}>{error}</p>}
             <label>Usuario:</label>
-            <input type="text" value={username} onChange={handleUsernameChange}></input>
+            <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
             <label>Contraseña:</label>
-            <input type="password" value={password} onChange={handlePasswordChange}></input>
-            <input type="submit" value="Entrar" onChange={handleSubmit} className="submit"></input>
+            <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+            <input type="submit" value="Entrar" onClick={handleSubmit} />
         </div>
-    )
+    );
 }
