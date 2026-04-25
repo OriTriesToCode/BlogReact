@@ -9,6 +9,8 @@ import Contacto from './Contacto'
 import Navbar from './Navbar'
 import Post from './Post'
 import Author from './Author';
+import NewPost from './NewPost';
+import Login from './Login'
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/blog/:id_post" element={<Post />} />
         <Route path="/blog/author/:id_author" element={<Author />} />
+        <Route path="/nuevo-post" element={<NewPost />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   )

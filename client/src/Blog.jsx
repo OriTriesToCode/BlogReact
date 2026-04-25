@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './Blog.css'
 import { CardList } from './Cards';
+import { Link } from 'react-router';
 
 function Blog() {
     const[entries, setEntries] = useState([]);
@@ -27,6 +28,7 @@ function Blog() {
             />
         </div>
         <CardList entries = {entries} filteredText={filteredText}></CardList>
+        <Link to="/nuevo-post" className="crear-post-btn">Crear Post</Link>
       </>
     )
   }

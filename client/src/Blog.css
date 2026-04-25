@@ -17,3 +17,24 @@
     color: var(--gold-light);
     text-shadow: 0 0 30px rgba(201,168,76,0.25);
 }
+
+.crear-post-btn {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+    padding: 0.85rem 1.8rem;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.crear-post-btn:hover {
+    box-shadow: 0 0 20px var(--gold-glow);
+    transform: translateY(-2px);
+    color: var(--bg);
+}

@@ -1,15 +1,24 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 export default function Author() {
     const {id_author} = useParams();
     const [author, setAuthor] = useState({});
+    const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:8000/authors/'+id_author)
-        .then((res) => res.json())
-        .then((data) => setAuthor(data));
-    }, [id_author]);
+        fetch('http://localhost:8000/authors/'+id_author,{
+            method: "GET",
+            credentials: "include"
+        })
+        .then((res) => {
+            if(res.status == 401) {
+                navigate('/login');
+            }
+            return res.json()})
+        .then((data) => setAuthor(data))
+        .catch((error) => console.log(error))
+    }, [id_author, navigate]);
 
     return (
         <>
