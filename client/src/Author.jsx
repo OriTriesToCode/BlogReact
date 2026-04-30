@@ -5,9 +5,10 @@ export default function Author() {
     const {id_author} = useParams();
     const [author, setAuthor] = useState({});
     const navigate = useNavigate();
+    const API_URL = import.meta.env.VITE_API_URL;
 
     useEffect(() => {
-        fetch('http://localhost:8000/authors/'+id_author,{
+        fetch('${API_URL}/authors/'+id_author,{
             method: "GET",
             credentials: "include"
         })

@@ -2,13 +2,14 @@ import './Home.css'
 import { Link } from 'react-router'
 import { useState, useEffect } from 'react'
 import Login from './Login'
+const API_URL = import.meta.env.VITE_API_URL;
 
 function Home() {
     const [loggedIn, setLoggedIn] = useState(false);
     const [checking, setChecking] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:8000/session-info", { credentials: "include" })
+        fetch("${API_URL}/session-info", { credentials: "include" })
         .then(res => res.json())
         .then(data => {
             setLoggedIn(!!data.id_author);

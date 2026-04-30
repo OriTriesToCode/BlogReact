@@ -4,6 +4,7 @@ import './NewPost.css';
 export default function NewPost() {
     const[title, setTitle] = useState("");
     const[img, setImg] = useState(null);
+    const API_URL = import.meta.env.VITE_API_URL;
 
     function handleTitleChange(e) {
         setTitle(e.target.value);
@@ -22,7 +23,7 @@ export default function NewPost() {
         formInfo.append('title', title);
         formInfo.append('img', img.file, img.filename);
     
-        fetch("http://localhost:8000/posts/new", {
+        fetch("${API_URL}/posts/new", {
             method: "POST",
             body: formInfo,
         })

@@ -1,19 +1,21 @@
 // client/src/Login.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import './Login.css';
 
 export default function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const API_URL = import.meta.env.VITE_API_URL;
 
     function handleSubmit() {
         const formInfo = new FormData();
         formInfo.append("username", username);
         formInfo.append("password", password);
 
-        fetch("http://localhost:8000/login", {
+        fetch("${API_URL}/login", {
             method: "POST",
             credentials: "include",
             body: formInfo,
