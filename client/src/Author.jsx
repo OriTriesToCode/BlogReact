@@ -8,7 +8,7 @@ export default function Author() {
     const API_URL = import.meta.env.VITE_API_URL;
 
     useEffect(() => {
-        fetch('${API_URL}/authors/'+id_author,{
+        fetch(`${API_URL}/authors/`+id_author,{
             method: "GET",
             credentials: "include"
         })

@@ -8,7 +8,7 @@ function Blog() {
     const API_URL = import.meta.env.VITE_API_URL;
 
     useEffect(() => {
-        fetch("${API_URL}/posts")
+        fetch(`${API_URL}/posts`)
           .then((res) => res.json())
           .then((posts) => setEntries(posts))
           .catch((err) => console.error("Error cargando posts:", err));

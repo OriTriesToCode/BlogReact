@@ -23,7 +23,7 @@ export default function NewPost() {
         formInfo.append('title', title);
         formInfo.append('img', img.file, img.filename);
     
-        fetch("${API_URL}/posts/new", {
+        fetch(`${API_URL}/posts/new`, {
             method: "POST",
             body: formInfo,
         })

@@ -9,7 +9,7 @@ function Home() {
     const [checking, setChecking] = useState(true);
 
     useEffect(() => {
-        fetch("${API_URL}/session-info", { credentials: "include" })
+        fetch(`${API_URL}/session-info`, { credentials: "include" })
         .then(res => res.json())
         .then(data => {
             setLoggedIn(!!data.id_author);
