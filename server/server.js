@@ -7,7 +7,7 @@ const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
 
 const app = express();
-app.use(cors({origin: 'http://localhost:5174', credentials: true}));
+app.use(cors({origin: process.env.FRONTEND_URL, credentials: true}));
 app.use(express.json());
 
 app.get('/hello', (req,res) => {
@@ -21,7 +21,8 @@ const cn = {
     database: process.env.DB_NAME,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    allowExitOnIdle: true
+    allowExitOnIdle: true,
+    ssl: { rejectUnauthorized: false } 
 }
 
 //definición de la carpeta donde se guardarán las imágenes al subir y el nombre que se les asignará
