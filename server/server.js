@@ -16,13 +16,8 @@ app.get('/hello', (req,res) => {
 
 const pgp = require('pg-promise')();
 const cn = {
-    host: process.env.DB_HOST,
-    port: 5432,
-    database: process.env.DB_NAME,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    allowExitOnIdle: true,
-    ssl: { rejectUnauthorized: false } 
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false }
 }
 
 //definición de la carpeta donde se guardarán las imágenes al subir y el nombre que se les asignará
